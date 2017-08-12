@@ -56,11 +56,11 @@ COPY ./config/torrc /etc/tor/torrc
 COPY ./scripts/ /usr/local/bin/
 
 # Persist data
-VOLUME /etc/tor /var/lib/tor
+VOLUME /etc/tor /var/lib/tor /var/log/tor
 
 # ORPort, DirPort, ObfsproxyPort
 EXPOSE 9001 9030 54444
 
 ENTRYPOINT ["docker-entrypoint"]
 
-CMD ["tor", "-f", "/etc/tor/torrc"]
+CMD ["service", "tor", "start"]
