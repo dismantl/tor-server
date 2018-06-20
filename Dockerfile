@@ -31,7 +31,7 @@ RUN gpg --keyserver keys.gnupg.net --recv 886DDD89 && \
     apt-get update && \
     build_deps="build-essential fakeroot devscripts quilt libssl-dev zlib1g-dev libevent-dev \
         asciidoc docbook-xml docbook-xsl xmlto dh-apparmor libseccomp-dev dh-systemd \
-        libsystemd-dev pkg-config dh-autoreconf hardening-includes" && \
+        libsystemd-dev pkg-config dh-autoreconf hardening-includes libcap-dev liblzma-dev" && \
     DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install $build_deps \
         obfsproxy \
         tor-geoipdb \
